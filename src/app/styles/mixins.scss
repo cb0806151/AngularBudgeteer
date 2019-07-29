@@ -1,0 +1,26 @@
+@mixin border($color) {
+    border: 1px solid $color;
+    border-radius: $standard-border-radius;
+}
+
+@mixin vertAndHortCentered($display) {
+    display: $display;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin positiveNegativeCheck() {
+    &.negative {
+        color: $red;
+    }
+    &.positive {
+        color: $green;
+    }
+    
+}
+
+@mixin fillPage() {
+    @media (max-width: 900px) {
+        width: 90%;
+    }
+}
