@@ -26,7 +26,7 @@
     }
 }
 
-.total-field {
+.total_field {
     @include positiveNegativeCheck();
 }
 
@@ -51,11 +51,11 @@
                 width: 100%;
                 text-align: center;
                 margin: 10px;
-                &.text-transparent {
+                &.text_transparent {
                     color: transparent;
                 }                
             }
-            .category-shell {
+            .category_shell {
                 width: 100%;
                 margin-bottom: 40px;
                 .budget_app_input_btn  {
@@ -86,7 +86,7 @@
                         color: $white;
                     }
                 }
-                .budget-app-entry {
+                .budget_app_entry {
                     width: 80%;
                     margin-left: 19%;
                     padding: 10px;
@@ -94,7 +94,7 @@
                     margin-bottom: 10px;
                     @include border($white);
                     @include positiveNegativeCheck();
-                    .entry-delete-btn {
+                    .entry_delete_btn {
                         padding-right: 5px;
                         padding-left: 5px;
                         text-align: center;
@@ -106,7 +106,7 @@
                         @include border($red);
                     }
                 }
-                .budget-app-category-total {
+                .budget_app_category_total {
                     width: 80%;
                     padding: 10px;
                     text-align: left;
@@ -115,7 +115,7 @@
                     display: inline-block;
                     @include border($white);   
                 }
-                .budget-app-category-collapse-btn {
+                .budget_app_category_collapse_btn {
                     width: 17%;
                     padding: 10px;
                     text-align: center;

@@ -22,8 +22,8 @@
           [(ngModel)]="newCategory">
           <div class="budget_app_input_btn" (click)="addCategory()">+</div>
           <div id="categories_container" *ngIf="categories.length > 0">
-               <p id="categories_warning_text" [ngClass]="{'text-transparent': !cantSubmitCharactersErrorSignVisible}">Characters cannot be entered in this field</p>
-               <div class="category-shell" *ngFor="let category of categories; let i = index;">
+               <p id="categories_warning_text" [ngClass]="{'text_transparent': !cantSubmitCharactersErrorSignVisible}">Characters cannot be entered in this field</p>
+               <div class="category_shell" *ngFor="let category of categories; let i = index;">
                     <input type="text" 
                     class="budget_app_input"
                     placeholder="Enter a entry for {{category.name}} here"
@@ -32,23 +32,23 @@
                     <div class="budget_app_input_btn" (click)="addEntry(i)">+</div>
                     <div class="budget_app_delete_btn" (click)="verifyDeleteModalOpen = true; removingCategoryId = i">-<div class="tooltip">remove category</div></div>
                     <ng-container *ngIf="category.entries_visible">
-                         <div class="budget-app-entry" 
+                         <div class="budget_app_entry" 
                          *ngFor="let entry of category.budget_entries; let j = index;" 
                          [ngClass]="{'negative': entry.value < 0, 'positive': entry.value > 0}">
                               {{entry.value}}
-                              <div class="entry-delete-btn" (click)="removeEntry(i, j)">X</div>
+                              <div class="entry_delete_btn" (click)="removeEntry(i, j)">X</div>
                          </div>
                     </ng-container>
                     <ng-container *ngIf="category.budget_entries.length > 0">
-                         <div class="budget-app-category-total">
-                              Category Total: <span class="total-field" [ngClass]="{'negative': category.entries_total < 0, 'positive': category.entries_total > 0}">{{category.entries_total.toFixed(2)}}</span>
+                         <div class="budget_app_category_total">
+                              Category Total: <span class="total_field" [ngClass]="{'negative': category.entries_total < 0, 'positive': category.entries_total > 0}">{{category.entries_total.toFixed(2)}}</span>
                          </div>
-                         <div class="budget-app-category-collapse-btn" (click)="category.entries_visible = !category.entries_visible">-</div>
+                         <div class="budget_app_category_collapse_btn" (click)="category.entries_visible = !category.entries_visible">-</div>
                     </ng-container>
                </div>
           </div>
           <div id="budget_app_total">
-               Budget Total: <span class="total-field" [ngClass]="{'negative': budgetTotal < 0, 'positive': budgetTotal > 0}">{{budgetTotal.toFixed(2)}}</span>
+               Budget Total: <span class="total_field" [ngClass]="{'negative': budgetTotal < 0, 'positive': budgetTotal > 0}">{{budgetTotal.toFixed(2)}}</span>
           </div>
      </div>
 </div>
