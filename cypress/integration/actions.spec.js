@@ -49,6 +49,7 @@ context('Actions', () => {
 
   it('.clear() - clears an input or textarea element', () => {
     // https://on.cypress.io/clear
+    cy.screenshot();
     cy.get('.action-clear').type('Clear this text')
       .should('have.value', 'Clear this text')
       .clear()
