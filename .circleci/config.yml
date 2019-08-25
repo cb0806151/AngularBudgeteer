@@ -93,6 +93,24 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 4
+          command: $(npm bin)/cypress run --spec cypress/integration/category.spec.js
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+  test5:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration
+      - run:
+          name: Running cypress tests 5
           command: $(npm bin)/cypress run --spec cypress/integration/connectors.spec.js
       - store_artifacts:
           path: cypress/videos
@@ -113,5 +131,8 @@ workflows:
           requires:
             - build
       - test4:
+          requires:
+            - build
+      - test5:
           requires:
             - build
