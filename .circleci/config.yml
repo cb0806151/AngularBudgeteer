@@ -101,12 +101,11 @@ jobs:
       - store_artifacts:
           path: cypress/screenshots
 workflows:
-  version: 2
+  # version: 2.1
   build:
     jobs:
       - cypress/run:
-          start: npm start
-          wait-on: 'http://localhost:4200'
+          start: ng serve
   # build_and_test:
   #   jobs:
   #     - build
