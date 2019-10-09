@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.10.0
 jobs:
   build:
     working_directory: ~/tmp
@@ -26,6 +28,11 @@ jobs:
           paths:
             - .cache
             - tmp
+  build2:
+    jobs:
+      - cypress/run:
+          start: ng serve
+          wait-on: 'http://localhost:4200'
   test1:
     working_directory: ~/tmp
     docker:
