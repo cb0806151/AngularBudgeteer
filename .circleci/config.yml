@@ -107,6 +107,9 @@ workflows:
       - cypress/run:
           spec: 'cypress/integration/connectors.spec.js'
           start: npm start
+          post-steps:
+            - store_test_results:
+                path: cypress/results
   # build_and_test:
   #   jobs:
   #     - build
