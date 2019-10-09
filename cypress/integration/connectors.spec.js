@@ -3,7 +3,7 @@
 describe('Test default negative button', () => {
 
   it('click entries negative by default button', () => {
-    cy.visit('https://cb0806151.github.io/AngularBudgeteer')
+    cy.visit('localhost:4200')
     cy.get('#budget_app_default_negative').click()
   })
 
@@ -16,7 +16,7 @@ describe('Test default negative button', () => {
   it('add entry and ensure it is negative by default', () => {
     cy.get('.budget_app_input').eq(1).type('10.13')
     cy.get('.budget_app_input_btn').eq(1).click()
-    cy.get('.budget-app-entry').contains('-10.13')
+    cy.get('.budget_app_entry').contains('-10.13')
   })
 
 })
