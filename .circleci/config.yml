@@ -28,8 +28,13 @@ jobs:
           paths:
             - .cache
             - tmp
-  build2:
-    jobs:
+  test0:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
       - cypress/run:
           start: ng serve
           wait-on: 'http://localhost:4200'
