@@ -1,6 +1,12 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.10.0
+workflows:
+  build:
+    jobs:
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:4200'
 jobs:
   build:
     working_directory: ~/tmp
@@ -28,16 +34,6 @@ jobs:
           paths:
             - .cache
             - tmp
-  test0:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/base:10'
-        environment:
-          TERM: xterm
-    steps:
-      - cypress/run:
-          start: ng serve
-          wait-on: 'http://localhost:4200'
   test1:
     working_directory: ~/tmp
     docker:
@@ -115,9 +111,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test0:
-          requires:
-            - build
       - test1:
           requires:
             - build
