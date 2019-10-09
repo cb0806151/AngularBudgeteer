@@ -108,8 +108,8 @@ workflows:
           spec: 'cypress/integration/connectors.spec.js'
           start: npm start
           post-steps:
-            - store_test_results:
-                path: cypress/results
+            - store_artifacts:
+                path: mochawesome-report
   # build_and_test:
   #   jobs:
   #     - build
