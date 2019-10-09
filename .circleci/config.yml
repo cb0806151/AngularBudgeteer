@@ -105,7 +105,7 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          start: ng serve
+          start: npm start
   # build_and_test:
   #   jobs:
   #     - build
