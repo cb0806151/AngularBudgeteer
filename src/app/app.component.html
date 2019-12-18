@@ -32,7 +32,7 @@
                     <div class="budget_app_input_btn" (click)="addEntry(i)">+</div>
                     <div class="budget_app_delete_btn" (click)="verifyDeleteModalOpen = true; removingCategoryId = i">-<div class="tooltip">remove category</div></div>
                     <ng-container *ngIf="category.entries_visible">
-                         <div class="budget_app_entry" 
+                         <div class="budget-app-entry" 
                          *ngFor="let entry of category.budget_entries; let j = index;" 
                          [ngClass]="{'negative': entry.value < 0, 'positive': entry.value > 0}">
                               {{entry.value}}
