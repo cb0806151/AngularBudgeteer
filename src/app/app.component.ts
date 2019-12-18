@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as moment from "moment";
 import { isNavigationCancelingError } from '@angular/router/src/shared';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
